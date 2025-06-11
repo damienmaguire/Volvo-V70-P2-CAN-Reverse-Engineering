@@ -1,0 +1,67 @@
+VERSION ""
+
+
+NS_ :
+    NS_DESC_
+    CM_
+    BA_DEF_
+    BA_
+    VAL_
+    CAT_DEF_
+    CAT_
+    FILTER
+    BA_DEF_DEF_
+    EV_DATA_
+    ENVVAR_DATA_
+    SGTYPE_
+    SGTYPE_VAL_
+    BA_DEF_SGTYPE_
+    BA_SGTYPE_
+    SIG_TYPE_REF_
+    VAL_TABLE_
+    SIG_GROUP_
+    SIG_VALTYPE_
+    SIGTYPE_VALTYPE_
+    BO_TX_BU_
+    BA_DEF_REL_
+    BA_REL_
+    BA_DEF_DEF_REL_
+    BU_SG_REL_
+    BU_EV_REL_
+    BU_BO_REL_
+    SG_MUL_VAL_
+
+BS_: 
+BU_: DIM SWM 
+BO_ 2202010188 Time: 8 DIM
+   SG_ Minutes : 39|16@0+ (1,-2048) [0|1] "Minutes" Vector__XXX
+
+BO_ 2151678054 Steering_Wheel_Buttons: 8 SWM
+   SG_ Audio : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+   SG_ Counter : 4|4@1+ (1,0) [0|16] "" Vector__XXX
+   SG_ Rolling_Counter : 24|4@1+ (1,0) [0|7] "" Vector__XXX
+   SG_ Cruise_Control : 39|16@0+ (1,0) [0|7] "" Vector__XXX
+
+BO_ 2187407370 Indicator_Stalk: 8 SWM
+   SG_ Indicators : 34|2@1+ (1,0) [0|1] "" Vector__XXX
+   SG_ High_Beam : 44|2@1+ (1,0) [0|1] "" Vector__XXX
+
+CM_ BU_ DIM "Display Interface Module (Tachometer)";
+CM_ BU_ SWM "Steering Wheel Module";
+CM_ SG_ 2202010188 Minutes "No_bias_for_Byte_0_==_0x00,_0x01";
+CM_ SG_ 2187407370 High_Beam "The_signal_only_indicates_movement,_when_the_high_beam_is_on,_the_signal_is_still_at_0x0";
+BA_DEF_ BO_ "GenMsgBackgroundColor" STRING ;
+BA_DEF_ BO_ "GenMsgForegroundColor" STRING ;
+BA_DEF_ BO_ "labelfilters" INT 0 0;
+BA_DEF_ BO_ "matchingcriteria" INT 0 0;
+BA_DEF_ BO_ "filterlabeling" INT 0 0;
+BA_DEF_DEF_ "GenMsgBackgroundColor" "#ffffff";
+BA_DEF_DEF_ "GenMsgForegroundColor" "#000000";
+BA_DEF_DEF_ "labelfilters" 1;
+BA_DEF_DEF_ "matchingcriteria" 0;
+BA_DEF_DEF_ "filterlabeling" 0;
+BA_ "GenMsgForegroundColor" BO_ 2151678054 "#000000";
+VAL_ 2151678054 Audio 127 "Nothing_Pressed" 119 "Vol_Up" 123 "Vol_Down" 125 "Forward" 126 "Backward";
+VAL_ 2151678054 Cruise_Control 8000 "Nothing_Pressed" 350 "No_Cruise_Buttons" 7745 "Cruise_Main_Button" 3920 "Zero" 5960 "Return" 7490 "Inc_Speed" 6980 "Dec_Speed";
+VAL_ 2187407370 Indicators 2 "Indicator_Left" 1 "Indicator_Right" 0 "No_Indicator";
+VAL_ 2187407370 High_Beam 3 "High_Beam_Switch_Toggle" 2 "High_Beam_Switch_Momentary" 0 "High_Beam_Switch_Off";
