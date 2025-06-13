@@ -46,3 +46,34 @@ ID (Bus)     | Byte | Step | Start | End | Match Rate
 0102C02C (1) |    0 |   64 |     0 | 195 |        1.0
 ...
 ```
+
+## CAN Extended ID Analyzer
+
+Simple tool that prints all IDs it found and divides them by the busses
+and shows a binary representation:
+
+```
+python '.\Extended ID Analyzer.py' '..\2002 Volvo S60 B5244S2 M56\10-06-2025\10-06-2025 15-22 --- car off, start, drive mostly around 50, accelerate to 120, around 50, shutdown, wait till car is off.csv'
+
+=== Bus 0 ===
+ ID (hex)  | ID (binary)
+-------------------------------------------------
+  00400066 | 0 0000 0100 0000 0000 0000 0110 0110
+  00613DF8 | 0 0000 0110 0001 0011 1101 1111 1000
+...
+  04000002 | 0 0100 0000 0000 0000 0000 0000 0010
+  04200002 | 0 0100 0010 0000 0000 0000 0000 0010
+-------------------------------------------------
+   23 unique extended CAN IDs found on Bus 0
+
+
+=== Bus 1 ===
+ ID (hex)  | ID (binary)
+-------------------------------------------------
+  0012C024 | 0 0000 0001 0010 1100 0000 0010 0100
+  0022C01E | 0 0000 0010 0010 1100 0000 0001 1110
+...
+  01A00002 | 0 0001 1010 0000 0000 0000 0000 0010
+-------------------------------------------------
+   19 unique extended CAN IDs found on Bus 1
+```
